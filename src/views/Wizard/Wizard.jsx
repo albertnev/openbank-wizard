@@ -22,7 +22,13 @@ const Wizard = () => {
         </div>
       )}
       <div className={styles.pageContent}>
-        {[<ProductInformation />, <Form />, <Feedback />][step - 1]}
+        {
+          [
+            <ProductInformation increaseStep={increaseStep} />,
+            <Form increaseStep={increaseStep} decreaseStep={decreaseStep} />,
+            <Feedback />,
+          ][step - 1]
+        }
       </div>
     </div>
   );

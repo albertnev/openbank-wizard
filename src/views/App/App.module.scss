@@ -2,10 +2,16 @@
 
 .appContainer {
   background-color: $backgroundColorFaded;
+  color: $secondary-color;
 
   & .wizardContainer {
     width: 90%;
+    max-width: 960px;
     margin: 0 auto;
     padding: 24px 0;
+  }
+
+  & h3 {
+    margin-top: $spacingXL;
   }
 }

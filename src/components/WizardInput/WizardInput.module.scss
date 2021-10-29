@@ -1,0 +1,31 @@
+@import '../../styles/base.scss';
+
+.inputWrapper {
+  & .inputLabel {
+    font-weight: bold;
+    display: block;
+    margin-bottom: $spacingS;
+  }
+
+  & .inputContainer {
+    border: 1px solid grey;
+    padding: $spacingS;
+    border-radius: $spacingXS / 2;
+
+    & input {
+      border: none;
+      padding: 0;
+      font-family: inherit;
+      font-size: inherit;
+      width: 100%;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  & .visibilityIcon {
+    color: grey;
+  }
+}

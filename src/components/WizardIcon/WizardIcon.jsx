@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import * as icons from 'react-icons/fa';
 import styles from './WizardIcon.module.scss';
 
-const WizardIcon = ({ iconName }) => {
+const WizardIcon = ({ iconName, ...props }) => {
   const IconToRender = icons[iconName];
   return (
-    <span className={styles.iconContainer}>
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    <span className={styles.iconContainer} {...props}>
       <IconToRender />
     </span>
   );

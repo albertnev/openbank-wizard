@@ -1,0 +1,12 @@
+@import '../../styles/base.scss';
+
+.header {
+  &::after {
+    content: '';
+    display: block;
+    width: $spacingL * 2;
+    height: $spacingXS;
+    background-color: $highglightColor;
+    margin-top: $spacingXS;
+  }
+}
