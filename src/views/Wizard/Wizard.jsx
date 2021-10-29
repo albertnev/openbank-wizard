@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { WizardNav } from '../../components';
-import styles from './Wizard.scss';
+import { Feedback, Form, ProductInformation } from '..';
+import styles from './Wizard.module.scss';
 
 const Wizard = () => {
-  const something = 'test text';
+  const numberOfSteps = 3;
+  const [step, setStep] = useState(1);
+
+  const increaseStep = () => {
+    if (step + 1 <= numberOfSteps) setStep(step + 1);
+  };
+  const decreaseStep = () => {
+    if (step - 1 > 0) setStep(step - 1);
+  };
 
   return (
-    <div className={styles.something}>
-      <WizardNav currentStep="2" />
-      <span>{something}</span>
+    <div className={styles.wizardContainer}>
+      {step < numberOfSteps && (
+        <div className={styles.wizardNavContainer}>
+          <WizardNav numberOfSteps={numberOfSteps} currentStep={step} />
+        </div>
+      )}
+      <div className={styles.pageContent}>
+        {[<ProductInformation />, <Form />, <Feedback />][step - 1]}
+      </div>
     </div>
   );
 };

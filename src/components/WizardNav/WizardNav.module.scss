@@ -1,17 +1,44 @@
 @import '../../styles/base.scss';
 
-.wizardSteps {
-  & li {
-    border-radius: 50%;
-    background-color: $secondary-color;
-    display: block;
-    width: 24px;
-    height: 24px;
-    opacity: 0.5;
-    color: $white;
+$stepSize: 32px;
+$biggerStepSize: $stepSize + 8;
+$activeStepDiff: 4px;
 
-    &.activeStep {
+.wizardSteps {
+  & ul {
+    display: flex;
+    align-items: center;
+  }
+
+  & li {
+    opacity: 0.5;
+    background-color: $secondary-color;
+
+    &.navStep {
+      border-radius: 50%;
+      display: block;
+      width: $stepSize;
+      height: $stepSize;
+      line-height: $stepSize;
+      text-align: center;
+      color: $white;
+
+      &.activeStep {
+        opacity: 1;
+        padding: $activeStepDiff;
+        box-shadow: 0 0 10px 0 $secondary-color;
+      }
+    }
+
+    &.navLine {
+      width: 100%;
+      height: 3px;
+      flex: 1;
+    }
+
+    &.completedStep {
       opacity: 1;
+      background-color: $primary-color;
     }
   }
 }

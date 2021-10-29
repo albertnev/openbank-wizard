@@ -1,3 +1,4 @@
+export * from './App';
 export * from './Wizard';
 export * from './ProductInformation';
 export * from './Form';

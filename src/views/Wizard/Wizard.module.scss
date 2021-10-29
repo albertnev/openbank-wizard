@@ -1,0 +1,26 @@
+@import '../../styles/base';
+
+$paddingSize: 32px;
+$boxShadowColor: #7496aa;
+
+.wizardContainer {
+  background-color: $secondary-color-faded;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 5px $boxShadowColor;
+
+  & .wizardNavContainer {
+    width: 40%;
+    margin: 0 auto;
+    padding: $paddingSize 0;
+    min-width: 250px;
+    max-width: 450px;
+  }
+
+  & .pageContent {
+    background-color: $white;
+    box-shadow: 0 -5px 10px -5px $boxShadowColor;
+    padding: $paddingSize;
+    flex-grow: 1;
+  }
+}

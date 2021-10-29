@@ -1,0 +1,11 @@
+@import '../../styles/base.scss';
+
+.appContainer {
+  background-color: #f2f6f9;
+
+  & .wizardContainer {
+    width: 90%;
+    margin: 0 auto;
+    padding: 24px 0;
+  }
+}

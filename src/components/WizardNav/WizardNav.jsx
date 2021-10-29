@@ -3,33 +3,49 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styles from './WizardNav.module.scss';
 
-const WizardNav = ({ currentStep }) => {
-  const steps = ['1', '2', '3'];
+const WizardNav = ({ numberOfSteps, currentStep }) => (
+  <nav className={styles.wizardSteps}>
+    <ul>
+      {[...Array(numberOfSteps)].map((_, step) => {
+        const actualStep = step + 1;
+        const isActive = actualStep === currentStep;
+        const isCompleted = actualStep + 1 <= currentStep;
 
-  return (
-    <nav className={styles.wizardSteps}>
-      <ul>
-        {steps.map((step) => (
-          <li
-            key={`nav-step-${step}`}
-            className={cx({
-              [styles.activeStep]: step === currentStep.toString(),
-            })}
-          >
-            {step}
-          </li>
-        ))}
-      </ul>
-    </nav>
-  );
-};
+        return (
+          <React.Fragment key={`nav-block-${actualStep}`}>
+            <li
+              key={`nav-step-${actualStep}`}
+              className={cx({
+                [styles.activeStep]: isActive,
+                [styles.completedStep]: isCompleted,
+                [styles.navStep]: true,
+              })}
+            >
+              {isCompleted ? '✓' : actualStep}
+            </li>
+            {actualStep < numberOfSteps && (
+              <li
+                key={`nav-line-${actualStep}`}
+                className={cx({
+                  [styles.completedStep]: isCompleted,
+                  [styles.navLine]: true,
+                })}
+              />
+            )}
+          </React.Fragment>
+        );
+      })}
+    </ul>
+  </nav>
+);
 
 WizardNav.propTypes = {
-  currentStep: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  numberOfSteps: PropTypes.number.isRequired,
+  currentStep: PropTypes.number,
 };
 
 WizardNav.defaultProps = {
-  currentStep: '1',
+  currentStep: 1,
 };
 
 export default WizardNav;
