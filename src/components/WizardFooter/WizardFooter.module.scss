@@ -1,0 +1,45 @@
+@import '../../styles/base.scss';
+
+.footerContainer {
+  display: flex;
+  padding: $contentTopsPadding $contentSidePadding;
+  border-top: $spacingXS solid $backgroundColorFaded;
+
+  & button {
+    border: 2px solid transparent;
+    background-color: $secondary-color;
+    color: $white;
+    font-weight: bold;
+    font-size: inherit;
+    padding: $spacingM $spacingXL;
+    border-radius: 4px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.cancelButton {
+      margin-right: auto;
+      background-color: $white;
+      padding-left: 0;
+      color: $secondary-color;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    &.continueButton {
+      margin-left: auto;
+
+      &:hover {
+        background-color: $white;
+        border-color: $secondary-color;
+        color: $secondary-color;
+      }
+    }
+  }
+
+  &.cancelButton {
+  }
+}

@@ -1,7 +1,7 @@
 @import '../../styles/base.scss';
 
 .appContainer {
-  background-color: #f2f6f9;
+  background-color: $backgroundColorFaded;
 
   & .wizardContainer {
     width: 90%;

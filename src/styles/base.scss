@@ -2,6 +2,17 @@ $primary-color: #ff0049;
 $secondary-color: #002b45;
 $secondary-color-faded: #ccd5da;
 $terciary-color: #fff1e5;
+$backgroundColorFaded: #f2f6f9;
 
 $white: #ffffff;
 $black: #000000;
+
+$spacingXL: 32px;
+$spacingL: 24px;
+$spacingM: 16px;
+$spacingS: 8px;
+$spacingXS: 4px;
+
+// We want to use CSS max method, not SCSS one, so we use uppercase as SCSS is case-sensitive
+$contentSidePadding: Max(8vw, #{$spacingL});
+$contentTopsPadding: Max(4vh, #{$spacingM});

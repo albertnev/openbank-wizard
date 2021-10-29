@@ -1,6 +1,6 @@
 @import '../../styles/base';
 
-$paddingSize: 32px;
+$paddingSize: $spacingXL;
 $boxShadowColor: #7496aa;
 
 .wizardContainer {
@@ -20,7 +20,6 @@ $boxShadowColor: #7496aa;
   & .pageContent {
     background-color: $white;
     box-shadow: 0 -5px 10px -5px $boxShadowColor;
-    padding: $paddingSize;
     flex-grow: 1;
   }
 }

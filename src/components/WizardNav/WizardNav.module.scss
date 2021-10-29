@@ -1,8 +1,8 @@
 @import '../../styles/base.scss';
 
-$stepSize: 32px;
-$biggerStepSize: $stepSize + 8;
-$activeStepDiff: 4px;
+$stepSize: $spacingXL;
+$biggerStepSize: $stepSize + $spacingS;
+$activeStepDiff: $spacingXS;
 
 .wizardSteps {
   & ul {

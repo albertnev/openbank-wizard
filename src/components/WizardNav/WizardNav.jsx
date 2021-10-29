@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { WizardIcon } from '..';
 import styles from './WizardNav.module.scss';
 
 const WizardNav = ({ numberOfSteps, currentStep }) => (
@@ -21,7 +22,7 @@ const WizardNav = ({ numberOfSteps, currentStep }) => (
                 [styles.navStep]: true,
               })}
             >
-              {isCompleted ? '✓' : actualStep}
+              {isCompleted ? <WizardIcon iconName="FaCheck" /> : actualStep}
             </li>
             {actualStep < numberOfSteps && (
               <li
