@@ -14,5 +14,16 @@
   "repeatYourMasterKey": "Repite tu Contraseña Maestra",
   "createYourHintOptional": "Crea tu pista para recordar tu contraseña (opcional)",
   "youCanAlsoCreateAHint": "También puedes crear una pista que te ayude a recordar tu Contraseña Maestra.",
-  "introduceYourHint": "Introduce tu pista"
+  "introduceYourHint": "Introduce tu pista",
+  "passwordsDoNotMatch": "Las dos contraseñas deben coincidir.",
+  "pwdAtLeastOneSpecialCharacter": "Debe contener al menos un carácter especial.",
+  "pwdAtLeastOneNumber": "Debe contener al menos un número.",
+  "pwdAtLeastOneUppercase": "Debe contener al menos una letra mayúscula.",
+  "pwdAtLeastOneLowercase": "Debe contener al menos una letra minúscula.",
+  "pwdAtLeastEightCharactersLong": "Debe tener al menos 8 caracteres.",
+  "passwordManagerCreatedSuccessfully": "¡Tu Password Manager ya está creado!",
+  "access": "Acceder",
+  "anErrorOcurred": "Ha habido un error",
+  "couldNotSetMasterKey": "No hemos podido modificar tu Contraseña Maestra. Por favor, inténtalo de nuevo más tarde.",
+  "returnToPasswordManager": "Volver a Password Manager"
 }
