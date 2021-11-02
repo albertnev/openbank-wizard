@@ -4,7 +4,7 @@
     "es2021": true,
     "jest": true
   },
-  "extends": ["airbnb", "prettier"],
+  "extends": ["airbnb", "prettier", "plugin:testing-library/react"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true,
@@ -13,7 +13,7 @@
     "ecmaVersion": 2021,
     "sourceType": "module"
   },
-  "plugins": ["prettier", "react"],
+  "plugins": ["prettier", "react", "testing-library"],
   "rules": {
     "no-unused-vars": 1,
     "react/no-unescaped-entities": 0,
