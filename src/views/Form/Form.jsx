@@ -63,7 +63,7 @@ const Form = ({ onCancel, onContinue }) => {
             maxLength={24}
             defaultValue={password}
             maskContent
-            toggleVisibility
+            visibilityToggle
             isValid={validInputs[0]}
             setIsValid={(valid) => {
               setValidInputs((state) => ({ ...state, 0: valid }));
@@ -81,7 +81,7 @@ const Form = ({ onCancel, onContinue }) => {
             maxLength={24}
             defaultValue={repeatedPassword}
             maskContent
-            toggleVisibility
+            visibilityToggle
             securityKeys={securityKeys}
             isValid={validInputs[1]}
             setIsValid={(valid) => {

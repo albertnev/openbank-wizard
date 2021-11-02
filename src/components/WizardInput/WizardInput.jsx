@@ -12,7 +12,7 @@ const WizardInput = ({
   label,
   placeholder,
   maskContent,
-  toggleVisibility,
+  visibilityToggle,
   maxLength,
   showRemainingCharacters,
   errorMessage,
@@ -81,8 +81,9 @@ const WizardInput = ({
               onChange={handleOnChange}
               maxLength={maxLength}
             />
-            {toggleVisibility && (
+            {visibilityToggle && (
               <WizardIcon
+                data-testid="wizard-input-mask-toggle"
                 iconName={maskedContent ? 'FaEye' : 'FaEyeSlash'}
                 className={styles.visibilityIcon}
                 onClick={() => setMaskedContent((current) => !current)}
@@ -134,7 +135,7 @@ WizardInput.propTypes = {
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   placeholder: PropTypes.string,
   maskContent: PropTypes.bool,
-  toggleVisibility: PropTypes.bool,
+  visibilityToggle: PropTypes.bool,
   maxLength: PropTypes.number,
   showRemainingCharacters: PropTypes.bool,
   errorMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
@@ -158,7 +159,7 @@ WizardInput.defaultProps = {
   defaultValue: '',
   placeholder: '',
   maskContent: false,
-  toggleVisibility: false,
+  visibilityToggle: false,
   maxLength: undefined,
   showRemainingCharacters: false,
   errorMessage: '',
