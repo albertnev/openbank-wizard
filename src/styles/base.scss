@@ -1,18 +1,30 @@
+@import 'include-media';
+
 $primary-color: #ff0049;
 $secondary-color: #002b45;
-$secondary-color-faded: #ccd5da;
+$secondary-color-faded: #c0cacf;
 $terciary-color: #fff1e5;
 $backgroundColorFaded: #f2f6f9;
 $highglightColor: #40c3df;
-
 $white: #ffffff;
 $black: #000000;
+$errorColor: rgb(197, 20, 20);
+$successColor: rgb(24, 143, 30);
 
 $spacingXL: 32px;
 $spacingL: 24px;
 $spacingM: 16px;
 $spacingS: 8px;
 $spacingXS: 4px;
+
+$maxWidth: 960px;
+
+// media breakpoints
+$breakpoints: (
+  small: 500px,
+  medium: 768px,
+  large: 1024px,
+);
 
 // We want to use CSS max method, not SCSS one, so we use uppercase as SCSS is case-sensitive
 $contentSidePadding: Max(8vw, #{$spacingL});

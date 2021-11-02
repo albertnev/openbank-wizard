@@ -1,8 +1,9 @@
-const PRUEBA_KO = "pruebaKO123";
+const PRUEBA_KO = 'pruebaKO123*';
 
 const RESPONSE_OK = { status: 200 };
 const RESPONSE_KO = { status: 401 };
 
+// eslint-disable-next-line no-unused-vars
 const submitForm = (pass, repass, optionalQuestion) =>
   new Promise((resolve, reject) =>
     setTimeout(

@@ -1,52 +1,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
+import { wizardButton as wizardButtonPropTypes } from '../../shared/propTypes';
+import { WizardButton } from '../WizardButton';
 import styles from './WizardFooter.module.scss';
 
-const WizardFooter = ({
-  cancelText,
-  continueText,
-  cancelAction,
-  continueAction,
-}) => {
-  const renderText = (textProp) =>
-    typeof textProp === 'function' ? textProp() : textProp;
-
-  return (
-    <footer className={styles.footerContainer}>
-      {cancelText && (
-        <button
-          type="button"
-          className={styles.cancelButton}
-          onClick={cancelAction}
-        >
-          {renderText(cancelText)}
-        </button>
-      )}
-      {continueText && (
-        <button
-          type="button"
-          className={styles.continueButton}
-          onClick={continueAction}
-        >
-          {renderText(continueText)}
-        </button>
-      )}
-    </footer>
-  );
-};
+const WizardFooter = ({ cancelButton, continueButton }) => (
+  <footer data-testid="wizard-footer" className={styles.footerContainer}>
+    {cancelButton.text && (
+      <WizardButton
+        className={cx({
+          [styles.cancelButton]: true,
+          [cancelButton.className]: cancelButton.className,
+        })}
+        onClick={cancelButton.onClick}
+        disabled={cancelButton.disabled}
+        isLink={cancelButton.isLink === undefined ? true : cancelButton.isLink}
+        text={cancelButton.text}
+      />
+    )}
+    {continueButton.text && (
+      <WizardButton
+        className={cx({
+          [styles.continueButton]: true,
+          [continueButton.className]: continueButton.className,
+        })}
+        onClick={continueButton.onClick}
+        disabled={continueButton.disabled}
+        isLink={continueButton.isLink}
+        text={continueButton.text}
+      />
+    )}
+  </footer>
+);
 
 WizardFooter.propTypes = {
-  cancelText: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  continueText: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  cancelAction: PropTypes.func,
-  continueAction: PropTypes.func,
+  cancelButton: PropTypes.shape(wizardButtonPropTypes),
+  continueButton: PropTypes.shape(wizardButtonPropTypes),
 };
 
 WizardFooter.defaultProps = {
-  cancelText: '',
-  continueText: '',
-  cancelAction: () => null,
-  continueAction: () => null,
+  cancelButton: {},
+  continueButton: {},
 };
 
 export default WizardFooter;

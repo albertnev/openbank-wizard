@@ -49,4 +49,7 @@ describe('WizardInput component', () => {
   it.todo(
     'displays visual feedback about the strength of the password based on securityKeys provided'
   );
+  it.todo(
+    'updates visual feedback when defaultValue is provided and user has not typed anything yet'
+  );
 });

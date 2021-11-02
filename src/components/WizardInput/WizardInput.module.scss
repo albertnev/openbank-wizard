@@ -1,6 +1,11 @@
 @import '../../styles/base.scss';
 
 .inputWrapper {
+  & label {
+    display: flex;
+    flex-direction: column;
+  }
+
   & .inputLabel {
     font-weight: bold;
     display: block;
@@ -8,9 +13,19 @@
   }
 
   & .inputContainer {
-    border: 1px solid grey;
-    padding: $spacingS;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid $secondary-color-faded;
+    padding: ($spacingS + $spacingXS);
     border-radius: $spacingXS / 2;
+
+    &.success {
+      border-color: $successColor;
+    }
+
+    &.error {
+      border-color: $errorColor;
+    }
 
     & input {
       border: none;
@@ -23,9 +38,44 @@
         outline: none;
       }
     }
+
+    & .visibilityIcon {
+      color: grey;
+      display: flex;
+    }
   }
 
-  & .visibilityIcon {
-    color: grey;
+  & .securityMeter {
+    height: 2px;
+
+    &.none {
+      width: 0;
+    }
+
+    &.low {
+      background-color: red;
+      width: 25%;
+    }
+
+    &.middle {
+      background-color: orange;
+      width: 50%;
+    }
+
+    &.high {
+      background-color: green;
+      width: 100%;
+    }
+  }
+
+  & .charactersLeft {
+    font-size: 90%;
+    color: $secondary-color-faded;
+    margin-top: $spacingXS;
+    align-self: end;
+  }
+
+  & .errorMessage {
+    color: $errorColor;
   }
 }

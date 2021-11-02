@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { WizardIcon } from '..';
+import { WizardIcon } from '../WizardIcon';
 import styles from './WizardNav.module.scss';
 
 const WizardNav = ({ numberOfSteps, currentStep }) => (
-  <nav className={styles.wizardSteps}>
+  <nav data-testid="wizard-nav-container" className={styles.wizardSteps}>
     <ul>
       {[...Array(numberOfSteps)].map((_, step) => {
         const actualStep = step + 1;
@@ -15,6 +15,7 @@ const WizardNav = ({ numberOfSteps, currentStep }) => (
         return (
           <React.Fragment key={`nav-block-${actualStep}`}>
             <li
+              data-testid="wizard-nav-step"
               key={`nav-step-${actualStep}`}
               className={cx({
                 [styles.activeStep]: isActive,
@@ -26,6 +27,7 @@ const WizardNav = ({ numberOfSteps, currentStep }) => (
             </li>
             {actualStep < numberOfSteps && (
               <li
+                data-testid="wizard-nav-line"
                 key={`nav-line-${actualStep}`}
                 className={cx({
                   [styles.completedStep]: isCompleted,

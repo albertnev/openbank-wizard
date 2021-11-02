@@ -2,26 +2,29 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { WizardIcon } from '../../components';
-import { ContentPage } from '..';
+import { ContentPage } from '../ContentPage';
 import styles from './ProductInformation.module.scss';
 
 import saveAllYourDataImg from '../../assets/img/group.svg';
 import createYourMasterKeyImg from '../../assets/img/group-3.svg';
 
-const ProductInformation = ({ increaseStep }) => {
+const ProductInformation = ({ onContinue }) => {
   const { t } = useTranslation();
 
   const footer = {
-    cancelText: t('cancel'),
-    continueText: () => (
-      <>
-        <span>{t('continue')} </span>
-        <WizardIcon iconName="FaChevronRight" />
-      </>
-    ),
-    cancelAction: () => {},
-    continueAction: () => {
-      increaseStep();
+    continueButton: {
+      text: () => (
+        <>
+          <span>{t('continue')} </span>
+          <WizardIcon iconName="FaChevronRight" />
+        </>
+      ),
+      onClick: () => {
+        onContinue();
+      },
+    },
+    cancelButton: {
+      text: t('cancel'),
     },
   };
 
@@ -58,7 +61,7 @@ const ProductInformation = ({ increaseStep }) => {
 };
 
 ProductInformation.propTypes = {
-  increaseStep: PropTypes.func.isRequired,
+  onContinue: PropTypes.func.isRequired,
 };
 
 export default ProductInformation;

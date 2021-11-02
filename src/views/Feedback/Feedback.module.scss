@@ -1,0 +1,31 @@
+@import '../../styles/base.scss';
+
+.feedbackTitleContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .feedbackIcon {
+    vertical-align: middle;
+
+    &.successIcon {
+      color: $successColor;
+    }
+
+    &.errorIcon {
+      color: $errorColor;
+    }
+
+    svg {
+      vertical-align: middle;
+    }
+  }
+
+  .feedbackTitle {
+    margin-left: $spacingL;
+  }
+}
+
+.feedbackButton {
+  padding-right: 0;
+}

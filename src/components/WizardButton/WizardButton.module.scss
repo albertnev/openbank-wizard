@@ -1,0 +1,36 @@
+@import '../../styles/base.scss';
+
+.wizardButton {
+  border: 2px solid transparent;
+  background-color: $secondary-color;
+  color: $white;
+  font-weight: bold;
+  font-size: inherit;
+  padding: $spacingM $spacingXL;
+  border-radius: 4px;
+
+  &[disabled] {
+    opacity: 0.7;
+  }
+
+  &:not([disabled]):hover {
+    cursor: pointer;
+  }
+
+  &.actionLink {
+    background-color: $white;
+    color: $secondary-color;
+
+    &:not([disabled]):hover {
+      color: $primary-color;
+    }
+  }
+
+  &.actionButton {
+    &:not([disabled]):hover {
+      background-color: $white;
+      border-color: $secondary-color;
+      color: $secondary-color;
+    }
+  }
+}

@@ -4,24 +4,21 @@ import PropTypes from 'prop-types';
 import { WizardFooter, WizardTitle } from '../../components';
 import styles from './ContentPage.module.scss';
 
-const ContentPage = ({ title, children, footer }) => {
+const ContentPage = ({ title, hideTitle, children, footer }) => {
   const { t } = useTranslation();
   const pageTitle = title || t('createYourPasswordManager');
-  const { cancelText, continueText, cancelAction, continueAction } =
-    footer || {};
+  const { cancelButton, continueButton } = footer || {};
 
   return (
     <>
       <div className={styles.wizardPageContent}>
-        <WizardTitle title={pageTitle} />
+        {!hideTitle && <WizardTitle title={pageTitle} />}
         {children}
       </div>
       {footer && (
         <WizardFooter
-          cancelText={cancelText}
-          continueText={continueText}
-          cancelAction={cancelAction}
-          continueAction={continueAction}
+          cancelButton={cancelButton}
+          continueButton={continueButton}
         />
       )}
     </>
@@ -30,12 +27,16 @@ const ContentPage = ({ title, children, footer }) => {
 
 ContentPage.propTypes = {
   title: PropTypes.string,
+  hideTitle: PropTypes.bool,
   children: PropTypes.node,
-  footer: PropTypes.objectOf(PropTypes.object),
+  footer: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.func])
+  ),
 };
 
 ContentPage.defaultProps = {
   title: '',
+  hideTitle: false,
   children: null,
   footer: null,
 };

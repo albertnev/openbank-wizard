@@ -3,12 +3,14 @@
 .appContainer {
   background-color: $backgroundColorFaded;
   color: $secondary-color;
+  min-height: 100vh;
+  line-height: 1.5;
 
   & .wizardContainer {
     width: 90%;
-    max-width: 960px;
+    max-width: $maxWidth;
     margin: 0 auto;
-    padding: 24px 0;
+    padding: $spacingL 0;
   }
 
   & h3 {
