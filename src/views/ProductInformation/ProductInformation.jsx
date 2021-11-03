@@ -19,19 +19,21 @@ const ProductInformation = ({ onContinue }) => {
           <WizardIcon iconName="FaChevronRight" />
         </>
       ),
+      'data-testid': 'product-information-continue-button',
       onClick: () => {
         onContinue();
       },
     },
     cancelButton: {
       text: t('cancel'),
+      'data-testid': 'product-information-cancel-button',
     },
   };
 
   return (
     <>
       <ContentPage footer={footer}>
-        <section>
+        <section data-testid="wizard-product-information-product-summary">
           <ul className={styles.infoSummary}>
             <li>
               <div className={styles.imgContainer}>
@@ -47,11 +49,11 @@ const ProductInformation = ({ onContinue }) => {
             </li>
           </ul>
         </section>
-        <section>
+        <section data-testid="wizard-product-information-how-it-works">
           <h3>{t('howItWorksTitle')}</h3>
           <p>{t('howItWorksDesc')}</p>
         </section>
-        <section>
+        <section data-testid="wizard-product-information-save-data">
           <h3>{t('whichDataCanYouSaveTitle')}</h3>
           <p>{t('whichDataCanYouSaveDesc')}</p>
         </section>

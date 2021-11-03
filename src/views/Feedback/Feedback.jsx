@@ -17,12 +17,16 @@ const Feedback = ({ onContinue, success }) => {
       onClick: () => {
         onContinue();
       },
+      'data-testid': 'wizard-feedback-continue-button',
     },
   };
 
   return (
     <ContentPage footer={footer} hideTitle>
-      <h1 className={styles.feedbackTitleContainer}>
+      <h1
+        data-testid="wizard-feedback-title"
+        className={styles.feedbackTitleContainer}
+      >
         <WizardIcon
           className={cx({
             [styles.feedbackIcon]: true,

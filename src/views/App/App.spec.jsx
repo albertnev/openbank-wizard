@@ -3,12 +3,15 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 
 describe('App component', () => {
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  const renderComponent = (props) => render(<App {...props} />);
+  const renderComponent = () => render(<App />);
 
-  beforeEach(() => {
+  it('renders the component correctly', () => {
     renderComponent();
+    expect(screen.getByTestId('wizard-app')).toBeInTheDocument();
   });
 
-  it.todo('renders the component correctly');
+  it('renders the Wizard component correctly', () => {
+    renderComponent();
+    expect(screen.getByTestId('wizard-container')).toBeInTheDocument();
+  });
 });

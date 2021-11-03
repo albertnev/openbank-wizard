@@ -11,7 +11,10 @@ const ContentPage = ({ title, hideTitle, children, footer }) => {
 
   return (
     <>
-      <div className={styles.wizardPageContent}>
+      <div
+        data-testid="wizard-content-page-container"
+        className={styles.wizardPageContent}
+      >
         {!hideTitle && <WizardTitle title={pageTitle} />}
         {children}
       </div>

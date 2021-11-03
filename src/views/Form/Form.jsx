@@ -24,12 +24,14 @@ const Form = ({ onCancel, onContinue }) => {
       onClick: () => {
         onContinue({ password, repeatedPassword, optionalHint });
       },
+      'data-testid': 'form-continue-button',
       disabled:
         Object.keys(validInputs).filter((inputKey) => validInputs[inputKey])
           .length !== 2 || errorMessage?.length > 0,
     },
     cancelButton: {
       text: t('cancel'),
+      'data-testid': 'form-cancel-button',
       onClick: () => {
         onCancel();
       },
@@ -55,9 +57,13 @@ const Form = ({ onCancel, onContinue }) => {
   return (
     <ContentPage footer={footer}>
       <p>{t('createPasswordFirstStep')}</p>
-      <ul className={styles.masterKeyInputs}>
+      <ul
+        data-testid="wizard-form-password-inputs-container"
+        className={styles.masterKeyInputs}
+      >
         <li>
           <WizardInput
+            data-testid="wizard-form-password"
             label={t('createYourMasterKey')}
             placeholder={t('introduceYourMasterKey')}
             maxLength={24}
@@ -76,6 +82,7 @@ const Form = ({ onCancel, onContinue }) => {
         </li>
         <li>
           <WizardInput
+            data-testid="wizard-form-repeat-password"
             label={t('repeatYourMasterKey')}
             placeholder={t('repeatYourMasterKey')}
             maxLength={24}
@@ -95,13 +102,17 @@ const Form = ({ onCancel, onContinue }) => {
         </li>
       </ul>
       {errorMessage && (
-        <p className={styles.errorMessage}>
+        <p
+          data-testid="wizard-form-error-message"
+          className={styles.errorMessage}
+        >
           <WizardIcon iconName="FaExclamationCircle" /> {errorMessage}
         </p>
       )}
-      <section>
+      <section data-testid="wizard-form-hint-section">
         <p>{t('youCanAlsoCreateAHint')}</p>
         <WizardInput
+          data-testid="wizard-form-hint"
           label={t('createYourHintOptional')}
           placeholder={t('introduceYourHint')}
           maxLength={255}

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Wizard } from '..';
+import { Wizard } from '../Wizard';
 import styles from './App.module.scss';
 
 const App = () => (
-  <div className={styles.appContainer}>
+  <div data-testid="wizard-app" className={styles.appContainer}>
     <div className={styles.wizardContainer}>
       <Wizard />
     </div>

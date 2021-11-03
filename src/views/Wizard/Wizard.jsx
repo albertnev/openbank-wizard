@@ -30,7 +30,7 @@ const Wizard = ({ currentStep }) => {
   };
 
   return (
-    <div className={styles.wizardContainer}>
+    <div data-testid="wizard-container" className={styles.wizardContainer}>
       {step < numberOfSteps && (
         <div className={styles.wizardNavContainer}>
           <WizardNav numberOfSteps={numberOfSteps} currentStep={step} />
