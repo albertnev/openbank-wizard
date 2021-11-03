@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useTranslation } from 'react-i18next';
+
 import { WizardIcon } from '../../components';
 import { ContentPage } from '../ContentPage';
 import styles from './Feedback.module.scss';

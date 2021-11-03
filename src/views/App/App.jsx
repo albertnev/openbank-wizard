@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Wizard } from '../Wizard';
 import styles from './App.module.scss';
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
+
 import { WizardIcon, WizardInput } from '../../components';
 import { ContentPage } from '../ContentPage';
 import styles from './Form.module.scss';

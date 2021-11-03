@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
+
 import { wizardButton as wizardButtonPropTypes } from '../../shared/propTypes';
 import { getRenderedText } from '../../helpers';
 import styles from './WizardButton.module.scss';

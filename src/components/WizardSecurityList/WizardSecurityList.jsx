@@ -1,6 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+
 import { WizardIcon } from '../WizardIcon';
 import styles from './WizardSecurityList.module.scss';
 

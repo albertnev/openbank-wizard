@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import * as icons from 'react-icons/fa';
+
 import styles from './WizardIcon.module.scss';
 
 const WizardIcon = ({ iconName, className, size, ...props }) => {

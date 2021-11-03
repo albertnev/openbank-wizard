@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+
 import { wizardButton as wizardButtonPropTypes } from '../../shared/propTypes';
 import { WizardButton } from '../WizardButton';
 import styles from './WizardFooter.module.scss';
