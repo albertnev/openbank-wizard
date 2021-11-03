@@ -57,7 +57,7 @@ describe('WizardButton component', () => {
   });
 
   it('applies correctly the data-testid prop', () => {
-    renderComponent({ 'data-testid': 'testing' });
+    renderComponent({ 'data-testid': 'wizard-button-testing' });
     expect(getComponent('wizard-button-testing')).toBeInTheDocument();
   });
 });
