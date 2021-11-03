@@ -20,6 +20,7 @@ const WizardInput = ({
   setIsValid,
   showSecurityHints,
   securityKeys,
+  'data-testid': dataTestId,
 }) => {
   const [charactersCount, setCharactersCount] = useState(0);
   const [maskedContent, setMaskedContent] = useState(maskContent);
@@ -55,18 +56,18 @@ const WizardInput = ({
   }, []);
 
   return (
-    <div data-testid="wizard-input" className={styles.inputWrapper}>
+    <div data-testid={dataTestId} className={styles.inputWrapper}>
       {label && (
         // eslint-disable-next-line jsx-a11y/label-has-associated-control
-        <label data-testid="wizard-input-label-container">
+        <label data-testid={`${dataTestId}-label-container`}>
           <span
-            data-testid="wizard-input-label-text"
+            data-testid={`${dataTestId}-label-text`}
             className={styles.inputLabel}
           >
             {getRenderedText(label)}
           </span>
           <div
-            data-testid="wizard-input-input-container"
+            data-testid={`${dataTestId}-input-container`}
             className={cx({
               [styles.inputContainer]: true,
               [styles.success]: isValid,
@@ -74,7 +75,7 @@ const WizardInput = ({
             })}
           >
             <input
-              data-testid="wizard-input-input-control"
+              data-testid={`${dataTestId}-input-control`}
               type={maskedContent ? 'password' : 'text'}
               placeholder={placeholder}
               defaultValue={defaultValue}
@@ -83,7 +84,7 @@ const WizardInput = ({
             />
             {visibilityToggle && (
               <WizardIcon
-                data-testid="wizard-input-mask-toggle"
+                data-testid={`${dataTestId}-mask-toggle`}
                 iconName={maskedContent ? 'FaEye' : 'FaEyeSlash'}
                 className={styles.visibilityIcon}
                 onClick={() => setMaskedContent((current) => !current)}
@@ -92,7 +93,7 @@ const WizardInput = ({
           </div>
           {securityKeys && (
             <div
-              data-testid="wizard-input-security-meter"
+              data-testid={`${dataTestId}-security-meter`}
               className={cx({
                 [styles.securityMeter]: true,
                 [styles.none]: strengthPercentage === 0,
@@ -106,7 +107,7 @@ const WizardInput = ({
           )}
           {showRemainingCharacters && maxLength && (
             <span
-              data-testid="wizard-input-characters-left"
+              data-testid={`${dataTestId}-characters-left`}
               className={styles.charactersLeft}
             >
               {charactersCount}/{maxLength}
@@ -117,7 +118,7 @@ const WizardInput = ({
           )}
           {errorMessage && (
             <div
-              data-testid="wizard-input-error-message"
+              data-testid={`${dataTestId}-error-message`}
               className={styles.errorMessage}
             >
               {getRenderedText(errorMessage)}
@@ -142,6 +143,7 @@ WizardInput.propTypes = {
   isValid: PropTypes.bool,
   setIsValid: PropTypes.func,
   showSecurityHints: PropTypes.bool,
+  'data-testid': PropTypes.string,
   securityKeys: PropTypes.arrayOf(
     PropTypes.shape({
       hint: PropTypes.string,
@@ -167,6 +169,7 @@ WizardInput.defaultProps = {
   setIsValid: undefined,
   showSecurityHints: true,
   securityKeys: undefined,
+  'data-testid': 'wizard-input',
 };
 
 export default WizardInput;

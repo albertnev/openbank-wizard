@@ -4,10 +4,17 @@ import { wizardButton as wizardButtonPropTypes } from '../../shared/propTypes';
 import { getRenderedText } from '../../helpers';
 import styles from './WizardButton.module.scss';
 
-const WizardButton = ({ text, onClick, disabled, isLink, className }) => (
+const WizardButton = ({
+  text,
+  onClick,
+  disabled,
+  isLink,
+  className,
+  'data-testid': dataTestId,
+}) => (
   <button
     type="button"
-    data-testid="wizard-button"
+    data-testid={dataTestId}
     className={cx({
       [styles.wizardButton]: true,
       [styles.actionLink]: isLink,
@@ -29,6 +36,7 @@ WizardButton.defaultProps = {
   onClick: () => null,
   disabled: false,
   isLink: false,
+  'data-testid': 'wizard-button',
 };
 
 export default WizardButton;

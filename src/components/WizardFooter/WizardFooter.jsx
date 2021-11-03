@@ -17,6 +17,7 @@ const WizardFooter = ({ cancelButton, continueButton }) => (
         disabled={cancelButton.disabled}
         isLink={cancelButton.isLink === undefined ? true : cancelButton.isLink}
         text={cancelButton.text}
+        data-testid={cancelButton['data-testid']}
       />
     )}
     {continueButton.text && (
@@ -29,6 +30,7 @@ const WizardFooter = ({ cancelButton, continueButton }) => (
         disabled={continueButton.disabled}
         isLink={continueButton.isLink}
         text={continueButton.text}
+        data-testid={continueButton['data-testid']}
       />
     )}
   </footer>

@@ -3,12 +3,10 @@ import { render, screen } from '@testing-library/react';
 import WizardLoader from './WizardLoader';
 
 describe('WizardLoader component', () => {
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  const renderComponent = (props) => render(<WizardLoader {...props} />);
+  const renderComponent = () => render(<WizardLoader />);
 
-  beforeEach(() => {
+  it('renders correctly the component', () => {
     renderComponent();
+    expect(screen.getByTestId('wizard-loader')).toBeInTheDocument();
   });
-
-  it.todo('renders correctly the component');
 });

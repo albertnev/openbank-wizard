@@ -6,4 +6,5 @@ export default {
   onClick: PropTypes.func,
   isLink: PropTypes.bool,
   disabled: PropTypes.bool,
+  'data-testid': PropTypes.string,
 };
