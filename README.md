@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# OpenBank Password Manager Wizard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Contents
 
-## Available Scripts
+- [Description](#description)
+- [Characteristics of the project](#characteristics-of-the-project)
+- [How to install and use](#how-to-install-and-use)
+- [Testing all flows](#testing-all-flows)
 
-In the project directory, you can run:
+## Description
 
-### `yarn start`
+This repository contains a test project which consists in creating a wizard component so that a user:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Can read product information before purchasing it
+- Can set its password with some hints and security requirements
+- Can see the final feedback about the status of the operation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![Demo GIF of the components in action](./public/demo.gif)
 
-### `yarn test`
+## Characteristics of the project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project has the following characteristics:
 
-### `yarn build`
+- Testing done with _Jest_ and _react-testing-library_
+- Styling applied using SCSS, with responsiveness in mind
+- Good practices in code applied using _airbnb_ rules for linting and Prettier
+- Loading and error visual feedback to the user using custom hooks during async calls
+- Completely customized and reusable `<WizardInput />` component
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How to install and use
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Just clone this git repository, and run in the terminal, targetting your cloned folder:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+> npm install
+> npm start
+```
 
-### `yarn eject`
+Or, if you have `yarn`, then:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+> yarn install
+> yarn start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Then, you can access the application in `http://localhost:3000/`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Testing all flows
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The fetch call made to the _service_ is mocked, and it's just a method that returns a status after 3 seconds.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To be able to test the _failure_ scenario, just use `pruebaKO123*` as the password in the _Form_ screen.
