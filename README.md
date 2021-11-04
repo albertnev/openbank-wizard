@@ -24,19 +24,13 @@ This project has the following characteristics:
 - Testing done with _Jest_ and _react-testing-library_
 - Styling applied using SCSS, with responsiveness in mind
 - Good practices in code applied using _airbnb_ rules for linting and Prettier
+- Uses translation with hooks from _i18next_ package
 - Loading and error visual feedback to the user using custom hooks during async calls
 - Completely customized and reusable `<WizardInput />` component
 
 ## How to install and use
 
-Just clone this git repository, and run in the terminal, targetting your cloned folder:
-
-```
-> npm install
-> npm start
-```
-
-Or, if you have `yarn`, then:
+Just clone this git repository and run in the terminal, targetting your cloned folder, the following commands:
 
 ```
 > yarn install
